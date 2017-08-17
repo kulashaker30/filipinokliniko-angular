@@ -1,0 +1,33 @@
+<nav class="navbar navbar-toggleable-md navbar-light">
+  <div class="container">
+
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <a class="navbar-brand" href="#">
+          <img src="assets/img/F.png" alt="" />
+      </a>
+      
+      <div class="collapse navbar-collapse" id="navbarText">
+          <ul class="navbar-nav mr-auto">
+            <li [ngClass]="menuCss[0].classes">
+                <a class="nav-link" (click)="active('news')" routerLink='news' href="#">Medical News</a>
+            </li>              
+            <li [ngClass]="menuCss[1].classes">
+                <a class="nav-link" (click)="active('doctors')" routerLink="doctors" href="#">Doctors</a>
+            </li>
+            <li [ngClass]="menuCss[2].classes">
+                <a class="nav-link" (click)="active('hospitals')" href="">Hospitals</a>
+            </li>
+            <li [ngClass]="menuCss[3].classes">
+                <a class="nav-link" (click)="active('medicines')" href="">Medicines</a>
+            </li>
+          </ul>
+          <div class="navbar-text">
+              Contact Us: +63 916 432 0966                 
+          </div>                    
+      </div>
+
+  </div>           
+</nav>

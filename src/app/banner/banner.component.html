@@ -1,0 +1,16 @@
+<div class="container-fluid slide-bg">
+  <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+
+    <div class="carousel-inner" role="listbox">
+
+      <div *ngFor="let banner of banners" [ngClass]="banner.classes">
+        <div class="container">
+            <h1 style="font-size: 4em">{{ banner.headerText}}</h1>
+            <p>{{ banner.content }}</p>                          
+        </div>
+      </div>  
+
+    </div>
+
+  </div>
+</div>

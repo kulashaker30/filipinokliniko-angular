@@ -1,0 +1,12 @@
+.slide-bg {
+    background-color: #0275d8!important;
+    padding: 2.5rem 15px;
+    color: white;
+    margin-bottom: 50px;
+}
+.slide-bg h1 {
+    font-size: 4rem;
+}
+.slide-bg p {
+    font-size: 1.5rem;
+}

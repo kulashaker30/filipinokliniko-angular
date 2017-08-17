@@ -1,0 +1,9 @@
+.navbar-brand img {
+    border-radius: 20%;
+    height: 32px;
+    width: 35px;
+}
+
+.navbar-brand {
+    margin-right: 0px;            
+}

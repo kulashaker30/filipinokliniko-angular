@@ -1,0 +1,10 @@
+
+<input type="text" [(ngModel)]="searchTerm" class="form-control" id="inlineFormInputGroup" (keyup)="searchSpecialization()">
+<div>
+    <nav *ngFor="let specialization of searchSpecializationResult">
+        <div class="a-container">
+            <a href="#" *ngIf="specialization.Specialization == 'Specialization'" style="font-weight:Bold" class="sidebar-a">{{ 'Specialization' }}</a>
+            <a routerLink="doctors/{{specialization.id}}/{{specialization.Specialization}}" href="#" *ngIf="specialization.Specialization != 'Specialization'" class="sidebar-a">{{specialization.Specialization }}</a>
+        </div>                
+    </nav>
+</div>

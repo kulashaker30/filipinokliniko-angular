@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col-sm-12">
+    <h1>Latest Health News:</h1>
+    <hr />
+      <ul class="media-list">
+
+        <li class="media" *ngFor="let feed of feeds">
+          <div class="media-body">
+            <h4 class="media-heading">
+              <a target="_blank" href="{{feed.link}}">{{ feed.title.replace("Medical News Today: ", "") }} - <span>{{feed.pubDate.substring(0, feed.pubDate.length - 3)}} PDT</span> </a>
+            </h4>
+            <p [innerHtml]="feed.description"></p>
+            <hr />  
+          </div>
+        </li>
+
+      </ul>
+
+  </div>
+</div>
