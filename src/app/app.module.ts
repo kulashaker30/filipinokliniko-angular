@@ -14,15 +14,18 @@ import { DoctorListComponent } from './content/main-content/doctor-content/docto
 import { DoctorItemComponent } from './content/main-content/doctor-content/doctor-list/doctor-item/doctor-item.component';
 import { FooterComponent } from './footer/footer.component';
 
+import { MedicalRssFeedItemComponent } from './content/main-content/medical-rss-feed/medical-rss-feed-item/medical-rss-feed-item.component';
+import { MedicalRssFeedComponent } from './content/main-content/medical-rss-feed/medical-rss-feed.component';
+
 import { DoctorService } from './content/main-content/doctor-content/doctor-list/doctor-service';
 import { LocationService } from './content/main-content/doctor-content/doctor-list/location-service';
 import { SideBarService } from './content/sidebar-content/sidebar-service';
 import { MedicalRssFeedService } from './content/main-content/medical-rss-feed/medical-rss-feed-service';
 
 import { RouterModule, Routes } from '@angular/router';
-import { MedicalRssFeedComponent } from './content/main-content/medical-rss-feed/medical-rss-feed.component';
 import { SidebarNewsContentComponent } from './content/sidebar-content/sidebar-news-content/sidebar-news-content.component';
 import { SidebarDoctorsContentComponent } from './content/sidebar-content/sidebar-doctors-content/sidebar-doctors-content.component';
+
 
 const appRoutes: Routes = [
   { path: 'doctors/:specializationid/:specialization', component: DoctorListComponent },
@@ -45,7 +48,8 @@ const appRoutes: Routes = [
     FooterComponent,
     MedicalRssFeedComponent,
     SidebarNewsContentComponent,
-    SidebarDoctorsContentComponent
+    SidebarDoctorsContentComponent,
+    MedicalRssFeedItemComponent
   ],
   imports: [
     RouterModule.forRoot(

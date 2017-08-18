@@ -1,3 +1,4 @@
+import { MedicalRssFeedItemComponent } from './medical-rss-feed-item/medical-rss-feed-item.component';
 import { Component, OnInit } from '@angular/core';
 import { MedicalRssFeedService } from './medical-rss-feed-service';
 
@@ -8,7 +9,7 @@ import { MedicalRssFeedService } from './medical-rss-feed-service';
 })
 export class MedicalRssFeedComponent implements OnInit {
 
-  private feeds = [];
+  private feeds : MedicalRssFeedItemComponent[];
   private error = '';
 
   constructor(private rssService: MedicalRssFeedService) { }
