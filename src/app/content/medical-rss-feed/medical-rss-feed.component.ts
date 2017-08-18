@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MedicalRssFeedComponent implements OnInit {
 
+  //Implement a sidebar for this content.
   constructor() { }
 
   ngOnInit() {
