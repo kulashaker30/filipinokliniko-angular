@@ -9,7 +9,7 @@ import { DoctorListItem } from './../../../../models/doctor.doctor-list-item';
 @Injectable()
 export class DoctorService {
 
-    private apiUrl = "http://localhost:3000/api";
+    private apiUrl = "http://127.0.0.1:3000/api";
 
     constructor(private http:Http) {
     }
