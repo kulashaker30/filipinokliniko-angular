@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-content',
@@ -8,22 +9,22 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 })
 export class ContentComponent implements OnInit {
 
-  public doctors = [
-    {
-      fullName: 'Chris Brown',
-      title: 'Senior Web Developer',
-      contactNo: '+63 916 432 0966'
-    },
-    {
-      fullName: 'Marko Luther',
-      title: 'Junior Web Developer',
-      contactNo: '+63 916 432 0966'
-    }    
-  ];
 
-  constructor() { }
+  public activeMenu = 'news'
+
+  constructor(private router: Router) { }
 
   ngOnInit() {
+    this.router.events.subscribe((evt) => {
+      if(evt instanceof NavigationEnd) {
+        if(evt.url == "/" || evt.url == '/news') {
+          this.activeMenu = 'news';
+        }
+        else {
+          this.activeMenu = 'doctors'
+        }
+    }      
+    })
   }
 
 }
