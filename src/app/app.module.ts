@@ -25,6 +25,7 @@ import { MedicalRssFeedService } from './content/main-content/medical-rss-feed/m
 import { RouterModule, Routes } from '@angular/router';
 import { SidebarNewsContentComponent } from './content/sidebar-content/sidebar-news-content/sidebar-news-content.component';
 import { SidebarDoctorsContentComponent } from './content/sidebar-content/sidebar-doctors-content/sidebar-doctors-content.component';
+import { SocialMediaComponent } from './social-media/social-media.component';
 
 
 const appRoutes: Routes = [
@@ -49,7 +50,8 @@ const appRoutes: Routes = [
     MedicalRssFeedComponent,
     SidebarNewsContentComponent,
     SidebarDoctorsContentComponent,
-    MedicalRssFeedItemComponent
+    MedicalRssFeedItemComponent,
+    SocialMediaComponent
   ],
   imports: [
     RouterModule.forRoot(
