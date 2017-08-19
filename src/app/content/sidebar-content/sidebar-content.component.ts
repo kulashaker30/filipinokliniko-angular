@@ -23,7 +23,7 @@ export class SidebarContentComponent implements OnInit {
     ngOnInit() {
       this.router.events.subscribe((evt) => {
         if(evt instanceof NavigationEnd) {
-          debugger;
+          
         }
       });
     }
