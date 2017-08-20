@@ -5,17 +5,17 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
 @Injectable()
-export class LocationService {
+export class DoctorItemService {
 
-    private apiUrl = "http://localhost:3000/api/locations";
+    private apiUrl = "http://localhost:3000/api";
 
     constructor(private http:Http) {
     }
 
-    getStates():Observable<any[]> {
-        return this.http.get(this.apiUrl + "/states")
-            .map(this.extractData)
-            .catch(this.handleError);
+    getHospitalsByDoctorId(doctorId:any) {
+        return this.http.get(this.apiUrl + "/hospitals/doctor/" + doctorId)
+        .map(this.extractData)
+        .catch(this.handleError);        
     }
 
     private extractData(res:Response) {

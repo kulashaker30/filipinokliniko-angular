@@ -1,0 +1,59 @@
+a {
+    text-decoration: none;
+    font-size: 10pt;
+}
+
+#collapseExample {
+    padding-top: 10px;
+}
+
+.list-group-item {
+    padding-left: 0;
+    border-bottom: 1px gray;
+    border-style: dashed;
+}
+
+.card {
+    border: 0;
+}
+
+.hospital-card-block {
+    padding-left: 0px;
+    padding-top: 10px;
+}
+
+.hospital {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    font-size: 10pt;
+    font-style: italic;
+}
+
+span {
+    color: #25628E;
+    font-weight: bold;
+    font-size: 8pt;
+}
+
+hr {
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.showLoading {
+    display: none;
+}
+
+.fa-spinner {
+    margin-left: 5px;
+    margin-top: 2px;
+}
+
+.fa-phone {
+    padding-left: 10px;
+}
+
+.btn {
+    margin-top: 5px;
+}
