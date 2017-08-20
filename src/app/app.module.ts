@@ -18,6 +18,7 @@ import { MedicalRssFeedItemComponent } from './content/main-content/medical-rss-
 import { MedicalRssFeedComponent } from './content/main-content/medical-rss-feed/medical-rss-feed.component';
 
 import { DoctorService } from './content/main-content/doctor-content/doctor-list/doctor-service';
+import { DoctorItemService } from './content/main-content/doctor-content/doctor-list/doctor-item/doctor-item-service';
 import { LocationService } from './content/main-content/doctor-content/doctor-list/location-service';
 import { SideBarService } from './content/sidebar-content/sidebar-service';
 import { MedicalRssFeedService } from './content/main-content/medical-rss-feed/medical-rss-feed-service';
@@ -62,7 +63,7 @@ const appRoutes: Routes = [
     HttpModule,
     FormsModule
   ],
-  providers: [DoctorService, SideBarService, LocationService, MedicalRssFeedService],
+  providers: [DoctorItemService, DoctorService, SideBarService, LocationService, MedicalRssFeedService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

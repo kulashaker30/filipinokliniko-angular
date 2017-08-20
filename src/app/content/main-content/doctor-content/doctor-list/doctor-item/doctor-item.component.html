@@ -4,11 +4,34 @@
           <h5 class="card-title">{{ doctor.FullName }}</h5>
           <hr />
           <p class="card-text">{{ doctor.Description }}</p>
-      </div>
-      <div class="card-block card-block-no-top-pad">
-          <p class="card-text">
-              {{ doctor.ContactNo }}
-          </p>
-          <a href="#" class="btn btn-outline-primary">Set appointment <i class="glyphicon glyphicon-phone"></i></a> 
+          <a class="btn btn-outline-primary" data-toggle="collapse" href="#info_d_{{doctor.id}}" aria-expanded="false" aria-controls="collapseExample">
+            More info
+          </a>
+          <div class="collapse more-info" id="info_d_{{doctor.id}}">
+            <div class="card">
+                <div class="card-block hospital-card-block">
+                  <div class="card-title">
+                    
+                    <hr>
+                    <a (click)="getHospitalsByDoctorId(doctor.id)" data-toggle="collapse" href="#info_h_d_{{doctor.id}}" aria-expanded="false" aria-controls="hospitalCollapsable">
+                        Hospitals / Clinics
+                    </a>
+                    <i [ngClass]="{'fa fa-spin fa-spinner': true, showLoading: !hospitalLoading}"></i>
+                    <hr class="hr-bottom">
+                    
+                    <div id="info_h_d_{{doctor.id}}" class="collapse">
+                        <div *ngFor="let hospital of hospitals">
+                            <div class="hospital">{{ hospital.Name }} - <span>{{ hospital.ContactNo }}</span></div>
+                        </div>
+                    </div>
+                        
+                    <a href="#" class="btn btn-outline-primary">Set appointment <i class="fa fa-phone"></i></a>
+
+                  </div>
+                  <!-- <div class="list-group-item">Contact No.</div>
+                  <div class="list-group-item"><a href="#" class="btn btn-outline-primary">Set appointment <i class="glyphicon glyphicon-phone"></i></a></div> -->
+                </div>
+              </div>
+          </div>          
       </div>                                
   </div>
