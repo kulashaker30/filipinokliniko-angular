@@ -18,9 +18,20 @@ export class LocationService {
             .catch(this.handleError);
     }
 
+    getDoctorsByLocation(location: string): Observable<any[]>  {
+        return this.http.get(this.apiUrl + "/" + location + "/doctors")
+            .map(this.extractSPData)
+            .catch(this.handleError);        
+    }
+
     private extractData(res:Response) {
         let body = res.json();
         return body || [];
+    }
+
+    private extractSPData(res: Response) {
+        let body = res.json()[0];
+        return body || [];        
     }
 
     private handleError(error:any) {

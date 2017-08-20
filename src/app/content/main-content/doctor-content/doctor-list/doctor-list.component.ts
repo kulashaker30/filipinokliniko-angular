@@ -5,6 +5,8 @@ import { LocationService } from './location-service';
 import { DoctorListItem } from './../../../../models/doctor.doctor-list-item';
 import 'rxjs/add/operator/toPromise';
 
+import {FormControl } from '@angular/forms';
+
 import { ActivatedRoute, Router, ResolveStart } from '@angular/router';
 
   @Component({
@@ -14,22 +16,48 @@ import { ActivatedRoute, Router, ResolveStart } from '@angular/router';
   })
   export class DoctorListComponent implements OnInit {
     
+    private stateCtrl: FormControl;
+    private states = [];
+    private filteredStates: any;
+    private stateErrorMessage:any = '';
 
     //SpecializationId param coming routing
     private specializationId:string;
     private specialization: string;
 
     hasLoaded = false;
-
-    private states = [];
-    private stateErrorMessage:any = '';
+    isSearchingDoctors = false;
 
     private doctors:DoctorListItem[];
     private errorMessage:any = '';
         
     constructor(private locationService: LocationService, private doctorService: DoctorService, private route: ActivatedRoute, private router: Router) {
+      this.stateCtrl = new FormControl();
 
+      this.filteredStates = this.stateCtrl.valueChanges
+          .startWith(null)
+          .map(name => this.filterStates(name));         
     }
+
+    searchDoctors() {
+      this.isSearchingDoctors = true;
+      this.locationService.getDoctorsByLocation(this.stateCtrl.value)
+        .subscribe(
+          doctors =>  {
+            this.doctors = doctors
+          },
+          error => {
+            this.stateErrorMessage = <any>error
+          },
+          () => {
+            this.isSearchingDoctors = false;
+          });      
+    }
+
+    filterStates(val: string) {
+      return val ? this.states.filter(s => s.toLowerCase().indexOf(val.toLowerCase()) > -1)
+                 : this.states;
+    }     
 
     ngOnInit() {
         this.specializationId = this.route.snapshot.params['specializationid'];
