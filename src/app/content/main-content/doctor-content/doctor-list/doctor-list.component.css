@@ -16,3 +16,7 @@ md-input-container {
 button {
     margin-left: 0px;
 }
+
+.row-loading-show {
+    display: none;
+}
