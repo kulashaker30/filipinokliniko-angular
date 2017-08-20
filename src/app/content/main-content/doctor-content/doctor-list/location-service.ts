@@ -7,7 +7,7 @@ import 'rxjs/add/operator/catch';
 @Injectable()
 export class LocationService {
 
-    private apiUrl = "http://127.0.0.1:3000/api/locations";
+    private apiUrl = "http://localhost:3000/api/locations";
 
     constructor(private http:Http) {
     }
