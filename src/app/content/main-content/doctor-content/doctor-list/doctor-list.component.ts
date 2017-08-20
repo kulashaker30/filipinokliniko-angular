@@ -41,6 +41,7 @@ import { ActivatedRoute, Router, ResolveStart } from '@angular/router';
 
     searchDoctors() {
       this.isSearchingDoctors = true;
+      this.doctors = [];
       this.locationService.getDoctorsByLocation(this.stateCtrl.value)
         .subscribe(
           doctors =>  {
@@ -110,7 +111,7 @@ import { ActivatedRoute, Router, ResolveStart } from '@angular/router';
       }      
       
       getDefaultDoctors() {
-        this.hasLoaded = false;
+        this.isSearchingDoctors = true;
         //Check if to load default doctors or by specializationid
         this.doctorService.getDefaultDoctors()
         .subscribe(
@@ -122,7 +123,7 @@ import { ActivatedRoute, Router, ResolveStart } from '@angular/router';
             },
             () => {
               // Idles the output in screen to have 'Loading..' display.
-              setTimeout(() => { this.hasLoaded = true}, 1000)
+              setTimeout(() => { this.isSearchingDoctors =false;}, 1000)
             });
       }
 
