@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, FormControl, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HeaderNavigationComponent } from './header-navigation/header-navigation.component';
@@ -27,6 +27,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { SidebarNewsContentComponent } from './content/sidebar-content/sidebar-news-content/sidebar-news-content.component';
 import { SidebarDoctorsContentComponent } from './content/sidebar-content/sidebar-doctors-content/sidebar-doctors-content.component';
 import { SocialMediaComponent } from './social-media/social-media.component';
+
+import {MdAutocompleteModule, MdInputModule, MaterialModule } from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import 'hammerjs'
 
 
 const appRoutes: Routes = [
@@ -57,11 +61,13 @@ const appRoutes: Routes = [
   imports: [
     RouterModule.forRoot(
       appRoutes,
-      { enableTracing: true } // <-- debugging purposes only
+      { enableTracing: false, useHash: true } // <-- debugging purposes only
     ),
     BrowserModule,
     HttpModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,MdInputModule,MdAutocompleteModule,MaterialModule
   ],
   providers: [DoctorItemService, DoctorService, SideBarService, LocationService, MedicalRssFeedService],
   bootstrap: [AppComponent]
