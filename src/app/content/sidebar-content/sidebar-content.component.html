@@ -4,8 +4,8 @@
         <nav *ngFor="let specialization of searchSpecializationResult">
             <div class="a-container">
                 <a href="#" *ngIf="specialization.Specialization == 'Specialization'" style="font-weight:Bold" class="sidebar-a">{{ 'Specialization' }}</a>
-                <a routerLink="doctors/{{specialization.id}}/{{specialization.Specialization}}" href="#" *ngIf="specialization.Specialization != 'Specialization'" class="sidebar-a">{{specialization.Specialization }}</a>
-            </div>                
+                <a href="#" *ngIf="specialization.Specialization != 'Specialization'" class="sidebar-a" routerLink="doctors/{{specialization.id}}/{{specialization.Specialization}}">{{specialization.Specialization}} </a><span class="badge badge-pill badge-default" style="font-size: 1%">{{specialization.Count}}</span>
+            </div> 
         </nav>
     </div>
 
