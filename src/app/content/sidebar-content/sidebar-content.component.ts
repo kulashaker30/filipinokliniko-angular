@@ -13,7 +13,7 @@ export class SidebarContentComponent implements OnInit {
 
     private specializations = [];
     private searchSpecializationResult = [];
-    private errorMessage:any = '';
+    private errorMessage: any = '';
     private searchTerm = '';
 
     constructor(private service: SideBarService, private router: Router) { 
@@ -38,7 +38,7 @@ export class SidebarContentComponent implements OnInit {
       let temp = this.specializations.slice();
       return temp.filter((item) => {
           return item.Specialization.toLowerCase().indexOf(query.toLowerCase()) > -1;
-      })
+      });
     }
 
     getData() {
@@ -54,7 +54,7 @@ export class SidebarContentComponent implements OnInit {
           },
           error => this.errorMessage = <any>error,
           () => {
-            console.log('Do something here if necessary.')
+            console.log('Do something here if necessary.');
           }
       );
     }
